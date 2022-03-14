@@ -16,6 +16,9 @@
 		847C30CC27DF929700E83228 /* MultilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C30CB27DF929700E83228 /* MultilineTextField.swift */; };
 		847C30CE27DF99E400E83228 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C30CD27DF99E400E83228 /* Note.swift */; };
 		847C30D027DF9A2F00E83228 /* EditNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C30CF27DF9A2F00E83228 /* EditNoteView.swift */; };
+		847C30D227DFADA300E83228 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C30D127DFADA300E83228 /* DBService.swift */; };
+		847C30D827DFBFE800E83228 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C30D727DFBFE800E83228 /* DateUtil.swift */; };
+		F6CC5C18BB5B18CE2578D81A /* Pods_Notepad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE80616A1F2DA98017311B75 /* Pods_Notepad.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,11 @@
 		847C30CB27DF929700E83228 /* MultilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextField.swift; sourceTree = "<group>"; };
 		847C30CD27DF99E400E83228 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		847C30CF27DF9A2F00E83228 /* EditNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteView.swift; sourceTree = "<group>"; };
+		847C30D127DFADA300E83228 /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
+		847C30D727DFBFE800E83228 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		BE80616A1F2DA98017311B75 /* Pods_Notepad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notepad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0E71395C33B4C385DFD7FAD /* Pods-Notepad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notepad.release.xcconfig"; path = "Target Support Files/Pods-Notepad/Pods-Notepad.release.xcconfig"; sourceTree = "<group>"; };
+		FD2D13BA00CB33E5A831A21D /* Pods-Notepad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notepad.debug.xcconfig"; path = "Target Support Files/Pods-Notepad/Pods-Notepad.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,17 +44,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6CC5C18BB5B18CE2578D81A /* Pods_Notepad.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7ACA73D5156EC5EE79872731 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FD2D13BA00CB33E5A831A21D /* Pods-Notepad.debug.xcconfig */,
+				D0E71395C33B4C385DFD7FAD /* Pods-Notepad.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8417271E27DE933D0011B1CE = {
 			isa = PBXGroup;
 			children = (
 				8417272927DE933E0011B1CE /* Notepad */,
 				8417272827DE933E0011B1CE /* Products */,
+				7ACA73D5156EC5EE79872731 /* Pods */,
+				AEF0D34C942DD8EDC1075227 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,15 +81,13 @@
 		8417272927DE933E0011B1CE /* Notepad */ = {
 			isa = PBXGroup;
 			children = (
+				847C30D627DFBFDB00E83228 /* utils */,
+				847C30D527DFBDB600E83228 /* services */,
+				847C30D427DFBDA500E83228 /* models */,
+				847C30D327DFBD6D00E83228 /* views */,
 				8417272A27DE933E0011B1CE /* NotepadApp.swift */,
 				8417272E27DE933F0011B1CE /* Assets.xcassets */,
 				8417273027DE933F0011B1CE /* Preview Content */,
-				8417273827DE935D0011B1CE /* NotesView.swift */,
-				8417273A27DE93950011B1CE /* NoteCard.swift */,
-				8417273C27DE9CB20011B1CE /* NewNoteView.swift */,
-				847C30CB27DF929700E83228 /* MultilineTextField.swift */,
-				847C30CD27DF99E400E83228 /* Note.swift */,
-				847C30CF27DF9A2F00E83228 /* EditNoteView.swift */,
 			);
 			path = Notepad;
 			sourceTree = "<group>";
@@ -82,6 +100,50 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		847C30D327DFBD6D00E83228 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				8417273827DE935D0011B1CE /* NotesView.swift */,
+				847C30CF27DF9A2F00E83228 /* EditNoteView.swift */,
+				8417273C27DE9CB20011B1CE /* NewNoteView.swift */,
+				847C30CB27DF929700E83228 /* MultilineTextField.swift */,
+				8417273A27DE93950011B1CE /* NoteCard.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		847C30D427DFBDA500E83228 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				847C30CD27DF99E400E83228 /* Note.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		847C30D527DFBDB600E83228 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				847C30D127DFADA300E83228 /* DBService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		847C30D627DFBFDB00E83228 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				847C30D727DFBFE800E83228 /* DateUtil.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		AEF0D34C942DD8EDC1075227 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE80616A1F2DA98017311B75 /* Pods_Notepad.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +151,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8417273527DE933F0011B1CE /* Build configuration list for PBXNativeTarget "Notepad" */;
 			buildPhases = (
+				BE2290E68DA890A4E51B7921 /* [CP] Check Pods Manifest.lock */,
 				8417272327DE933E0011B1CE /* Sources */,
 				8417272427DE933E0011B1CE /* Frameworks */,
 				8417272527DE933E0011B1CE /* Resources */,
+				1E3FA42AFD11D848C3F5672A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,16 +211,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1E3FA42AFD11D848C3F5672A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Notepad/Pods-Notepad-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Notepad/Pods-Notepad-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Notepad/Pods-Notepad-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE2290E68DA890A4E51B7921 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Notepad-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8417272327DE933E0011B1CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				847C30CC27DF929700E83228 /* MultilineTextField.swift in Sources */,
+				847C30D227DFADA300E83228 /* DBService.swift in Sources */,
 				8417273B27DE93950011B1CE /* NoteCard.swift in Sources */,
 				8417272B27DE933E0011B1CE /* NotepadApp.swift in Sources */,
 				8417273927DE935D0011B1CE /* NotesView.swift in Sources */,
 				8417273D27DE9CB20011B1CE /* NewNoteView.swift in Sources */,
+				847C30D827DFBFE800E83228 /* DateUtil.swift in Sources */,
 				847C30CE27DF99E400E83228 /* Note.swift in Sources */,
 				847C30D027DF9A2F00E83228 /* EditNoteView.swift in Sources */,
 			);
@@ -283,6 +391,7 @@
 		};
 		8417273627DE933F0011B1CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD2D13BA00CB33E5A831A21D /* Pods-Notepad.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +421,7 @@
 		};
 		8417273727DE933F0011B1CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0E71395C33B4C385DFD7FAD /* Pods-Notepad.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

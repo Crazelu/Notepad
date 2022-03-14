@@ -8,29 +8,16 @@
 import SwiftUI
 
 struct NotesView: View {
-   @State private var notes = [
-        Note(
-            id: "1",
-            title:  "Last Supper",
-            content: "There's a space with white washed walls and two cute", date: "February 3, 2022 01:20 AM"
-        ),
-        Note(
-            id: "2",
-            title:  "Last Supper2",
-            content: "There's a space with white washed walls and two cute", date: "February 9, 2022 11:20 PM"
-        )
-    ]
+    @State private var notes: [Note] = []
     var body: some View {
         NavigationView{
             ZStack{
-                List{
-                    ForEach(notes, id:\.self.id){
-                        note in
-                        NoteCard(
-                            note: note
-                        )
-                            .listRowSeparator(.hidden)
-                    }
+                List(self.notes){
+                    (note) in
+                    NoteCard(
+                        note: note
+                    )
+                        .listRowSeparator(.hidden)
                 }
                 VStack{
                     Spacer()
@@ -51,7 +38,7 @@ struct NotesView: View {
                 
             }
             .onAppear(perform: {
-                //fetch notes here
+                self.notes = DBService().fetchNotes()
             })
             .navigationTitle("Notepad")
             .listStyle(PlainListStyle())

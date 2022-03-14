@@ -5,7 +5,7 @@
 //  Created by Crazelu on 14/03/2022.
 //
 
-struct Note: Hashable{
+struct Note: Hashable, Identifiable{
     var id: String
     var title: String
     var content: String

@@ -1,30 +1,26 @@
 //
-//  EditNoteView.swift
+//  NewNoteView.swift
 //  Notepad
 //
-//  Created by Crazelu on 14/03/2022.
+//  Created by Crazelu on 13/03/2022.
 //
 
 import SwiftUI
 
-struct EditNoteView: View {
-    
-    var note: Note
-    
+struct NewNoteView: View {
     @Environment(\.presentationMode) private var presentationMode
     @State private var title:String = ""
     @State private var noteBody:String = ""
+    private let date = Date()
     
-    func formatDate()->String{
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM dd, yyyy hh:mm a"
-        guard let date = dateFormatter.date(from: note.date)else {
-            return ""
-        }
-        return dateFormatter.string(from: date)
+    func formatDate(from: Date? = nil)->String{
+       return DateUtil.formatDate(date: from ?? date)
     }
     
     func saveNote(){
+        let date = formatDate(from: Date())
+        
+        DBService().addNote(note: Note(id: date, title: self.title, content: self.noteBody, date: date))
         presentationMode.wrappedValue.dismiss()
     }
     
@@ -35,11 +31,11 @@ struct EditNoteView: View {
                 .padding(.bottom)
                 .padding(.top, 100)
             
-            MultilineTextField(self.title.isEmpty ? "Title" : "", text: $title)
+            MultilineTextField("Title", text: $title)
                 .font(.system(size: 20, weight: .semibold))
                 .padding(.bottom, 10)
             
-            MultilineTextField(self.noteBody.isEmpty ? "Note something down" : "", text: $noteBody)
+            MultilineTextField("Note something down", text: $noteBody)
                 .multilineTextAlignment(.leading)
                 .font(.system(size: 16, weight: .regular))
                 .foregroundColor(Color(uiColor: UIColor(named: "Grey")!))
@@ -48,10 +44,6 @@ struct EditNoteView: View {
                
             
         }
-        .onAppear(perform: {
-            self.title = note.title
-            self.noteBody = note.content
-        })
         .toolbar{
             ToolbarItemGroup(placement: .navigationBarTrailing){
                 if(!self.title.isEmpty || !self.noteBody.isEmpty){
@@ -68,8 +60,8 @@ struct EditNoteView: View {
     }
 }
 
-struct EditNoteView_Previews: PreviewProvider {
+struct NewNoteView_Previews: PreviewProvider {
     static var previews: some View {
-        EditNoteView(note: Note(id: "", title: "Some new note", content: "Dummy content", date: "March 14, 2022 04:08 PM"))
+        NewNoteView()
     }
 }
