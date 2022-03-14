@@ -11,7 +11,7 @@ import SwiftUI
 struct NotepadApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NotesView()
         }
     }
 }

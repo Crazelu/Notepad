@@ -8,17 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		8417272B27DE933E0011B1CE /* NotepadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417272A27DE933E0011B1CE /* NotepadApp.swift */; };
-		8417272D27DE933E0011B1CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417272C27DE933E0011B1CE /* ContentView.swift */; };
 		8417272F27DE933F0011B1CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8417272E27DE933F0011B1CE /* Assets.xcassets */; };
 		8417273227DE933F0011B1CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8417273127DE933F0011B1CE /* Preview Assets.xcassets */; };
+		8417273927DE935D0011B1CE /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417273827DE935D0011B1CE /* NotesView.swift */; };
+		8417273B27DE93950011B1CE /* NoteCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417273A27DE93950011B1CE /* NoteCard.swift */; };
+		8417273D27DE9CB20011B1CE /* NewNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417273C27DE9CB20011B1CE /* NewNoteView.swift */; };
+		847C30CC27DF929700E83228 /* MultilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C30CB27DF929700E83228 /* MultilineTextField.swift */; };
+		847C30CE27DF99E400E83228 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C30CD27DF99E400E83228 /* Note.swift */; };
+		847C30D027DF9A2F00E83228 /* EditNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C30CF27DF9A2F00E83228 /* EditNoteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8417272727DE933E0011B1CE /* Notepad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notepad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8417272A27DE933E0011B1CE /* NotepadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotepadApp.swift; sourceTree = "<group>"; };
-		8417272C27DE933E0011B1CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8417272E27DE933F0011B1CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8417273127DE933F0011B1CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8417273827DE935D0011B1CE /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
+		8417273A27DE93950011B1CE /* NoteCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCard.swift; sourceTree = "<group>"; };
+		8417273C27DE9CB20011B1CE /* NewNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteView.swift; sourceTree = "<group>"; };
+		847C30CB27DF929700E83228 /* MultilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextField.swift; sourceTree = "<group>"; };
+		847C30CD27DF99E400E83228 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		847C30CF27DF9A2F00E83228 /* EditNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +62,14 @@
 			isa = PBXGroup;
 			children = (
 				8417272A27DE933E0011B1CE /* NotepadApp.swift */,
-				8417272C27DE933E0011B1CE /* ContentView.swift */,
 				8417272E27DE933F0011B1CE /* Assets.xcassets */,
 				8417273027DE933F0011B1CE /* Preview Content */,
+				8417273827DE935D0011B1CE /* NotesView.swift */,
+				8417273A27DE93950011B1CE /* NoteCard.swift */,
+				8417273C27DE9CB20011B1CE /* NewNoteView.swift */,
+				847C30CB27DF929700E83228 /* MultilineTextField.swift */,
+				847C30CD27DF99E400E83228 /* Note.swift */,
+				847C30CF27DF9A2F00E83228 /* EditNoteView.swift */,
 			);
 			path = Notepad;
 			sourceTree = "<group>";
@@ -137,8 +152,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8417272D27DE933E0011B1CE /* ContentView.swift in Sources */,
+				847C30CC27DF929700E83228 /* MultilineTextField.swift in Sources */,
+				8417273B27DE93950011B1CE /* NoteCard.swift in Sources */,
 				8417272B27DE933E0011B1CE /* NotepadApp.swift in Sources */,
+				8417273927DE935D0011B1CE /* NotesView.swift in Sources */,
+				8417273D27DE9CB20011B1CE /* NewNoteView.swift in Sources */,
+				847C30CE27DF99E400E83228 /* Note.swift in Sources */,
+				847C30D027DF9A2F00E83228 /* EditNoteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
